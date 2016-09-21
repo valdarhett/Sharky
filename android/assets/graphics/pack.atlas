@@ -1,0 +1,47 @@
+
+pack.png
+size: 1024,1024
+format: RGBA8888
+filter: Nearest,Nearest
+repeat: none
+anglerfish_spritesheet
+  rotate: false
+  xy: 2, 2
+  size: 800, 1020
+  orig: 800, 1020
+  offset: 0, 0
+  index: -1
+
+pack2.png
+size: 1024,1024
+format: RGBA8888
+filter: Nearest,Nearest
+repeat: none
+goldfishspritesheet
+  rotate: false
+  xy: 2, 129
+  size: 450, 655
+  orig: 450, 655
+  offset: 0, 0
+  index: -1
+s_plyr_elec_strip2
+  rotate: false
+  xy: 454, 696
+  size: 288, 88
+  orig: 288, 88
+  offset: 0, 0
+  index: -1
+s_plyr_swim_strip10
+  rotate: false
+  xy: 2, 70
+  size: 1000, 57
+  orig: 1000, 57
+  offset: 0, 0
+  index: -1
+s_sirenback_swim_strip4
+  rotate: false
+  xy: 2, 2
+  size: 392, 66
+  orig: 392, 66
+  offset: 0, 0
+  index: -1
