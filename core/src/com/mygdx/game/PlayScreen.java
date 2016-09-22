@@ -107,7 +107,7 @@ public class PlayScreen implements Screen, InputProcessor
 		bgAnimationFrames[index++] = bgTmp[i][j];
 	    }
 	}
-	bgAnimation = new Animation(0.05f, bgAnimationFrames);
+	bgAnimation = new Animation(1/8f, bgAnimationFrames);
 
 	goldfishTmp = game.atlas.findRegion("goldfishspritesheet").split(
 		game.atlas.findRegion("goldfishspritesheet").getRegionWidth() / 3,
@@ -125,9 +125,9 @@ public class PlayScreen implements Screen, InputProcessor
 	goldfishAnimation = new Animation(0.05f, goldfishAnimationFrames);
 
 	anglerfishTmp = game.atlas.findRegion("anglerfish_spritesheet").split(
-		game.atlas.findRegion("anglerfish_spritesheet").getRegionWidth() / 4,
-		game.atlas.findRegion("anglerfish_spritesheet").getRegionHeight() / 5);
-	anglerfishAnimationFrames = new TextureRegion[20];
+		game.atlas.findRegion("anglerfish_spritesheet").getRegionWidth() / 10,
+		game.atlas.findRegion("anglerfish_spritesheet").getRegionHeight());
+	anglerfishAnimationFrames = new TextureRegion[10];
 
 	index = 0;
 	for (int i = 0; i < anglerfishTmp.length; i++)
@@ -200,8 +200,8 @@ public class PlayScreen implements Screen, InputProcessor
 
 	// anglerfish
 	currentFrame = anglerfishAnimation.getKeyFrame(stateTime, true);
-	game.batch.draw(currentFrame, angler.getPos().x, angler.getPos().y, 0, 0, 1, -1, MyGdxGame.PPM * 64f,
-		MyGdxGame.PPM * -64f, 0);
+	game.batch.draw(currentFrame, angler.getPos().x, angler.getPos().y, 0, 0, 1, -1, MyGdxGame.PPM * 100f,
+		MyGdxGame.PPM * -102f, 0);
 	game.batch.end();
 
 	game.batch.setProjectionMatrix(controller.stage.getCamera().combined);
@@ -263,7 +263,10 @@ public class PlayScreen implements Screen, InputProcessor
 	{
 	    mPlayer.b2Body.applyForce(new Vector2(0, -3 * 10), mPlayer.b2Body.getWorldCenter(), true);
 	}
-
+	if (Gdx.input.isKeyPressed(Keys.G))
+	{
+	    mPlayer.b2Body.setLinearVelocity(0, 0);
+	}
 	if (controller.downPressed)
 	{
 	    mPlayer.b2Body.applyForce(new Vector2(0, -3 * 10), mPlayer.b2Body.getWorldCenter(), true);
